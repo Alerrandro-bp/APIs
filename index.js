@@ -1,16 +1,18 @@
-const usuario = {
-    "nome": "Alerrandro",
-    "idade": 22,
-};
+const express = require('express');
+const app = express();
 
-console.log(usuario);
-console.log(usuario.nome);
+app.get('/', (req, res) =>{
+    res.send('Olá mundo!')
+});
 
-const usuarioJson = JSON.stringify(usuario);
+app.get('/nome', (req, res) =>{
+    res.send('Alerrandro');
+});
 
-console.log(usuarioJson);
-console.log(usuarioJson.nome);
+app.get('/sobreNome', (req, res) => {
+    res.send('Buss Pickler');
+})
 
-const parcelJson = JSON.parse(usuarioJson); //parse() para converter dados perante o JSON
-
-console.log(parcelJson.nome);
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
+});
