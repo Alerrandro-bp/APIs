@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+/*
 const unsuario1 = {
     "id": 1,
         "nome": "João",
@@ -33,6 +33,12 @@ app.get('/usuario', (req, res) =>{
 //http://localhost:3000/usuario/1
 app.get('/usuario/:id', (req, res) =>{
     res.json(req.params);
+});
+*/
+
+app.get('/', function(request, response){
+    const tempo = new Date();
+    response.json(tempo);
 });
 
 app.listen(3000, () => {
